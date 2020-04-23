@@ -1,0 +1,104 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(237, 237, 237);
+}
+
+body,
+html {
+    height: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+header {
+    /* border-bottom: 1px solid black; */
+    /* border: 1px solid black; */
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    /* color: black; */
+}
+
+.main_text {
+    margin-left: 100px;
+    margin-bottom: 10px;
+    justify-content: flex-start;
+    color: rgb(3, 154, 127);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.main_SignIn {
+    margin-right: 140px;
+    justify-content: flex-end;
+    border-radius: 8px;
+    background-color: rgb(3, 154, 127);
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.central_part {
+    background-image: url("img.jpg");
+    height: 93%;
+    width: 100%;
+    display: flex;
+}
+
+.cp_text {
+    /* text-align: center; */
+    margin: auto;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.cp_MailBox {
+    width: 60%;
+    margin-top: 30px;
+    margin-left: 30px;
+    border-radius: 8px;
+    padding: 4px 0px 4px 10px;
+}
+
+.cp_button {
+    border-radius: 8px;
+    background-color: rgb(3, 154, 127);
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.cp_button:hover {
+    background-color: #007aff;
+    opacity: 90%;
+}
+
+.benef_part {
+    margin: 20px 200px 100px 200px;
+    display: flex;
+    justify-content: space-between;
+    text-align: justify;
+}
+
+
+/* .bp1_text,
+.bp2_text,
+.bp3_text {
+    font-weight: bold;
+    text-align: center;
+    color: rgb(3, 154, 127);
+} */
+
+.benef_part h2 {
+    /* font-weight: bold; */
+    text-align: center;
+    color: rgb(3, 154, 127);
+}
+
+.bp_2 {
+    margin-left: 40px;
+    margin-right: 40px;
+}

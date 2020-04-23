@@ -1,0 +1,39 @@
+h1 {
+    background-color: #C0F7D7;
+    border-color: #27C76B;
+    border-style: ridge;
+    padding: 30px;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 5px 10px
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+div li:nth-child(2) {
+    color: blue;
+}
+
+#firstdiv li:hover {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+div p:nth-child(1) {
+    background-color: pink;
+    color: white;
+}
+
+#seconddiv p:nth-child(2) {
+    background-color: lightblue;
+    /* padding: 2%;
+    margin: 2px; */
+}
