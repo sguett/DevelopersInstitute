@@ -20,9 +20,26 @@ a {
     justify-content: flex-end;
 }
 
+.header {
+    height: 100vh;
+    background-image: url('../Day5/profile/headerback.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+#overlay {
+    position: absolute;
+    min-height: 100vh;
+    min-width: 100vw;
+    left: 0;
+    top: 0;
+    background: rgba(244, 244, 244, 0.79)
+}
+
 .text-center {
     position: absolute;
     top: 30%;
-    margin: auto;
+    margin-left: 60px;
     padding: 2em;
 }
