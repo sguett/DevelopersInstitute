@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: "Raleway";
+}
+
+
+/* nav {
+    display: flex;
+    justify-content: space-between;
+} */
+
+div {
+    display: block;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.header {
+    height: 100vh;
+    background-image: url('../XPGold/profile/headerback.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+#overlay {
+    position: absolute;
+    min-height: 100vh;
+    min-width: 100vw;
+    left: 0;
+    top: 0;
+    background: rgba(244, 244, 244, 0.79);
+}
+
+.description {
+    position: absolute;
+    top: 30%;
+    margin: auto;
+    padding: 2em;
+}
+
+.description h1 {
+    /* color: #F97300; */
+    text-align: left;
+}
+
+.description p {
+    color: #666;
+    font-size: 20px;
+    text-align: left;
+    width: 50%;
+    line-height: 1.5;
+}
+
+.sect_about {
+    padding: 10px;
+    /* border: 3px solid black; */
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "pic txt txt";
+    /* grid-gap: 10px; */
+}
+
+.about1 {
+    /* border: 1px solid red;
+    background-color: #ffd6cc; */
+    grid-area: pic
+}
+
+.about2 {
+    border-left: 1px solid black;
+    padding-left: 20px;
+    /* margin-block-start: 1px solid black; */
+    /* background-color: #ffd6cc; */
+    grid-area: txt
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+
+/* .text-center {
+    text-align: center!important;
+}
+
+
+h1 {
+    display: block;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+} */
