@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+body {
+    padding: 0;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: "Raleway";
+}
+
+
+/* div {
+    display: flex;
+} */
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.header {
+    height: 100vh;
+    background-image: url('/Week1/Day5/profile/headerback.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}

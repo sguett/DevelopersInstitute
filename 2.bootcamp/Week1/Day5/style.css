@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+body {
+    padding: 0;
+    margin: 0;
+    background: #f4f4f4;
+}
+
 html,
 h1,
 h2,
@@ -15,6 +21,10 @@ a {
     display: flex;
     justify-content: space-between;
 } */
+
+div {
+    display: block;
+}
 
 .navbar-collapse {
     justify-content: flex-end;
@@ -37,9 +47,26 @@ a {
     background: rgba(244, 244, 244, 0.79)
 }
 
-.text-center {
+.description {
     position: absolute;
     top: 30%;
-    margin-left: 60px;
+    margin: auto;
     padding: 2em;
+}
+
+.text-center {
+    text-align: center!important;
+}
+
+.description h1 {
+    color: #F97300;
+    text-align: left;
+}
+
+h1 {
+    display: block;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
