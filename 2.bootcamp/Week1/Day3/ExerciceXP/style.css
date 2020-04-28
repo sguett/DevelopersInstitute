@@ -1,34 +1,46 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-body {
-    padding: 0;
-    margin: 0;
-    background: #f4f4f4;
-}
-
-html,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a {
+* {
     font-family: "Raleway";
+    /* text-align: center; */
+    /* height: 100%;
+    width: 100%; */
+    /* margin: 0; */
+    padding: 0;
+}
+
+header {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 40px;
+    color: blue;
+    background-color: lightblue;
+}
+
+article {
+    text-align: center;
+    border: lightblue solid 3px;
 }
 
 
-/* div {
-    display: flex;
+/* h1 {
+    text-align: center;
 } */
 
-.navbar-collapse {
-    justify-content: flex-end;
+.container_about {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.header {
-    height: 100vh;
-    background-image: url('/Week1/Day5/profile/headerback.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+.col2 {
+    text-align: left;
+    margin-left: 40px;
+}
+
+ul {
+    /* display: flex;
+    flex-direction: column; */
+    list-style: none;
+    /* align-content: space-between; */
+    /* justify-content: center; */
 }
