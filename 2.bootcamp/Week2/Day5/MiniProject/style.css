@@ -1,0 +1,9 @@
+.navbar .form-inline .btn {
+    background-color: green;
+    color: white;
+    border-color: green;
+}
+
+h1.text-strong {
+    font-weight: 500;
+}
