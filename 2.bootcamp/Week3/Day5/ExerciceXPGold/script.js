@@ -127,23 +127,26 @@ function worstgrade(var1) {
 
 // Write a program to check if a few students have the same grade. Console.log their names.
 
+// function samegrade(var1) {
+//     for (i = 0; i < Object.keys(var1).length; i++) {
+//         for (j = 1; j < Object.keys(var1).length; j++) {
+//             console.log("i", i, "j", j)
+//             if ((Object.values(var1)[i] == Object.values(var1)[j]) && (Object.keys(var1)[i] != Object.keys(var1)[j])) {
+//                 console.log(Object.keys(var1)[i] + ' and ' + Object.keys(var1)[j] + ' have the same grade with ' + Object.values(var1)[i]);
+//                 break;
+//             }
+//         }
+//     }
+// }
+
 function samegrade(var1) {
-    for (i = 0; i < Object.keys(var1).length; i++) {
-        for (j = 1; j < Object.keys(var1).length; j++) {
-            if ((Object.values(var1)[i] == Object.values(var1)[j]) && (Object.keys(var1)[i] != Object.keys(var1)[j])) {
-                console.log(Object.keys(var1)[i] + ' and ' + Object.keys(var1)[j] + ' have the same grade with ' + Object.values(var1)[i]);
-                break;
+    arr = [];
+    for (let i in var1) {
+        for (let j in var1) {
+            if (i != j && var1[i] == var1[j] && arr.includes(i) == false) {
+                arr.push(i);
             }
         }
     }
+    console.log(arr);
 }
-
-// function samegrade2(var1) {
-//     arr = [];
-//     for (i in var1) {
-//         if (i != var1 && var1[i] == grades[i] && arr.includes(i) == false) {
-//             arr.push(i);
-//         }
-//     }
-//     console.log(arr);
-// }
