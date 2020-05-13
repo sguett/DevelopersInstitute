@@ -33,6 +33,8 @@ function countLettersArray(str) {
             maxWords = i;
         }
     }
-    console.log('The word with the greatest number of repeated letters is : ' + maxWords)
-    return str;
+    return 'The word with the greatest number of repeated letters is : ' + maxWords
+        // return str;
 }
+
+console.log(countLettersArray(words));
