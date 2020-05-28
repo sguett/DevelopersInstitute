@@ -120,7 +120,7 @@ input.addEventListener("keyup", function() {
     let search = input.value.toUpperCase()
     for (x of name) {
         let textName = x.innerText.toUpperCase();
-        console.log(textName.includes(search))
+        // console.log(textName.includes(search))
         if (textName.includes(search)) {
             x.parentElement.style.display = ""
         } else {
