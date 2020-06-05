@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <div class="container" id="content">
+
+        <div id="parent" class="row text-center">
+    
+          <h1 class="text-primary text-center">Tic Tac Toe Game</h1>
+    
+          <div id="start" class="row text-center">Choose which one to play with:
+            <button id="x" class="first">X</button>
+            <button id="o" class="first">O</button>
+          </div>
+    
+        </div>
+    
+    
+        <table class="board">
+          <tr>
+            <td class="cell" id="0"></td>
+            <td class="cell" id="1"></td>
+            <td class="cell" id="2"></td>
+          </tr>
+          <tr>
+            <td class="cell" id="3"></td>
+            <td class="cell" id="4"></td>
+            <td class="cell" id="5"></td>
+          </tr>
+          <tr>
+            <td class="cell" id="6"></td>
+            <td class="cell" id="7"></td>
+            <td class="cell" id="8"></td>
+          </tr>
+        </table>
+        <div class="endgame">
+            <div class="text"></div>
+            <button onClick="startGame()">Replay</button>
+        </div>
+    </div>
+ <script src="script.js"></script>
+</body>
+</html>
