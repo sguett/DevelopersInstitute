@@ -23,10 +23,9 @@ reverseArray2([1,2,3,4,5,6,7,8,9,10])
 // method 3
 
 function reverseArray3(arr){
-  let reversedArray = [];
-  return arr.reduce( (reversedArray, value) => {
-    return [value , ...reversedArray];
-  }, reversedArray);
+  return arr.reduce((accumulator, value) => {
+    return [value, ...accumulator]
+  }, []);
 };
 
 reverseArray3([1,2,3,4,5,6,7,8,9,10])
