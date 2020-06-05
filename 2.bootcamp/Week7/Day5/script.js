@@ -80,6 +80,7 @@ function startGame() {
 	}
 }
 
+// create a function call a rand number
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -88,14 +89,14 @@ function getRandomIntInclusive(min, max) {
 
 
 function turnClick(square){
-    if (typeof origBoard[square.target.id]=='number'){
-        origBoard[square.target.id] = huPlayer
-        cells[square.target.id].innerText = huPlayer
-        let huPlayerArr = origBoard.reduce((a, e, i) => (e === huPlayer) ? a.concat(i) : a, []);
-        if (testWin(huPlayerArr,"hu") ==  true){
+    if (typeof origBoard[square.target.id]=='number'){ // if the box clicked is empty
+        origBoard[square.target.id] = huPlayer // save location choose in the origBoard array
+        cells[square.target.id].innerText = huPlayer // display "X" or "O"
+        let huPlayerArr = origBoard.reduce((a, e, i) => (e === huPlayer) ? a.concat(i) : a, []); // create a new array with only choices of player
+        if (testWin(huPlayerArr,"hu") ==  true){ // call function testWin to check if player win or not
             document.querySelector(".endgame").style.display = "block";
             document.querySelector(".endgame .text").innerText = "You win!";
-        } else{
+        } else{ // if player not win then rand choose a square
             for (i=0;i<origBoard.length;i++){
                 let rand = getRandomIntInclusive(0, 8);
                 if (typeof origBoard[rand]=='number') {
@@ -104,13 +105,14 @@ function turnClick(square){
                     break;
                 }
             }
+            // create a new array with only choices of rand "ai"
             let aiPlayerArr = origBoard.reduce((a, e, i) => (e === aiPlayer) ? a.concat(i) : a, []);
-            if (testWin(aiPlayerArr,"ai") ==  true){
+            if (testWin(aiPlayerArr,"ai") ==  true){ // test if rand "ai" win or not
                 document.querySelector(".endgame").style.display = "block";
                 document.querySelector(".endgame .text").innerText = "You lose!";
             }
         }
-        if (tieWin().length == 0){
+        if (tieWin().length == 0){ // call tieWin to check if all squares are full. If the length == 0, i.e array in function have not numbers.
             document.querySelector(".endgame").style.display = "block";
             document.querySelector(".endgame .text").innerText = "Tie game!";      
         }
@@ -120,14 +122,14 @@ function turnClick(square){
 
 function testWin(arr,player){
     let bool = false;
-    for (let [index, win] of winCombos.entries()){
-        if (win.every((el) => arr.includes(el))){
+    for (let [index, win] of winCombos.entries()){ // for each array in winCombos
+        if (win.every((el) => arr.includes(el))){ // if all the win elements are in arr (the player's squares)
             bool = true
-            if (player == 'hu'){
+            if (player == 'hu'){ // if player is human
                 document.getElementById(win[0]).style.backgroundColor = "#009900";
                 document.getElementById(win[1]).style.backgroundColor = "#009900";
                 document.getElementById(win[2]).style.backgroundColor = "#009900";
-            } else {
+            } else { // else if player is rand
                 document.getElementById(win[0]).style.backgroundColor = "#FF0000";
                 document.getElementById(win[1]).style.backgroundColor = "#FF0000";
                 document.getElementById(win[2]).style.backgroundColor = "#FF0000";
@@ -137,8 +139,8 @@ function testWin(arr,player){
     return bool;
 }
 
-function tieWin(){
-    return origBoard.filter((elem) => typeof elem == 'number');
+function tieWin(){ 
+    return origBoard.filter((elem) => typeof elem == 'number'); // filter on array origBoard and save only numbers
 }   
 
 
