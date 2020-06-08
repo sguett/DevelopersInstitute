@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires" CONTENT="-1">
+    <title></title>
+    <script>
+        const submitForm = () => {
+            const firstname = document.getElementById('fname'); 
+            const lastname = document.getElementById('lname');
+            const obj = {name: firstname.value, lastname: lastname.value};
+            const jsonusers = JSON.stringify(obj);
+            console.log(jsonusers)
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <form method="dialog" onsubmit="return submitForm()">
+        <input type="text" name="name" value="" id="fname">
+        <input type="text" name="lastname" value="" id="lname">
+        <input type="submit" name="" value="Send">
+    </form>
+</body>
+
+</html>
+
+
+
+<!--
+    action="index.html" method="GET" 
+required
+pattern example pattern="[Bb]anana|[Cc]herry"
+text - minlength and maxlength
+number - min and max
+validation - js validation - built-in validation
+-->
