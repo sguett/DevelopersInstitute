@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires" CONTENT="-1">
+    <title></title>
+    <script>
+        const submitForm = () => {
+            const name = document.getElementById('name');
+            const comments = document.getElementById('comments');
+            const obj = { name: name.value, comments: comments.value};
+            const jsonusers = JSON.stringify(obj);
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="index.html" method="POST" onsubmit="return submitForm()">
+        <p>
+        <div>Name</div>
+        <input type="text" name="name" value="" id="name" style="width: 200px;">
+        </p>
+        <p>
+        <div>Comments</div>
+        <textarea name="comments" id="comments" rows="5" style="width: 200px;"></textarea>
+        </p>
+        <input type="submit" name="" value="Send">
+    </form>
+</body>
+
+</html>
+
+
+<!-- Question: Where can you see the data that you send ? 
+We can see the data in console => Network, then on the Name "index.html" => Form Data
+-->

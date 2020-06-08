@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires" CONTENT="-1">
+    <title></title>
+    <script>
+        const submitForm = () => {
+            const name = document.getElementById('name');
+            const lastName = document.getElementById('lname');
+            const obj = { name: name.value, comments: lastName.value};
+            const jsonusers = JSON.stringify(obj);
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="formdata.html" method="GET" onsubmit="return submitForm()">
+        <p>NAME
+            <input type="text" name="name" value="" id="name" style="width: 200px;">
+        </p>
+        
+        <p>LAST NAME
+            <input type="text" name="comments" value="" id="lname" style="width: 200px;">
+            <input type="submit" name="" value="Send">
+        </p>
+        
+    </form>
+</body>
+
+</html>
