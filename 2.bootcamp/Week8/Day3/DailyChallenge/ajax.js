@@ -2,7 +2,8 @@
 let xhr = new XMLHttpRequest();
 // step 2
 xhr.open('GET', 'https://developers.giphy.com/');
-xhr.setRequestHeader("AUTH-KEY","PclvxPD17SyTuQRCTXJHQ10y056F5fwZ")
+xhr.setRequestHeader("Access-Control-Allow-Origin","*");
+xhr.setRequestHeader("AUTH-KEY","PclvxPD17SyTuQRCTXJHQ10y056F5fwZ");
 // step 3
 xhr.send();
 
