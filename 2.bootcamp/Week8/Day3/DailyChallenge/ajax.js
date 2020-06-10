@@ -1,54 +1,51 @@
-// step 1
-let xhr = new XMLHttpRequest();
-// step 2
-xhr.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=PclvxPD17SyTuQRCTXJHQ10y056F5fwZ');
-xhr.setRequestHeader("Access-Control-Allow-Origin","*");
-// xhr.setRequestHeader("api_key","PclvxPD17SyTuQRCTXJHQ10y056F5fwZ");
-// step 3
-xhr.send();
-
-
-xhr.responseType = 'json'; // for json file (4)
-
-xhr.onload = function () {
-    if (xhr.status != 200) {
-        console.log(`Error: ${xhr.status}: ${xhr.statusText}`)
+function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    // xhttp.withCredentials = true;
+    let q = document.getElementsByTagName("input")[0].value;
+    let link = 'https://api.giphy.com/v1/gifs/search?api_key=PclvxPD17SyTuQRCTXJHQ10y056F5fwZ&q=' + q
+    xhttp.open('GET',link );
+    // xhttp.setRequestHeader('Access-Control-Allow-Origin','*')
+    xhttp.send();
+    xhttp.responseType = 'json'; 
+    xhttp.onload = function () {
+        if (xhttp.status != 200) {
+            console.log(`Error: ${xhttp.status}: ${xhttp.statusText}`)
+        }
+        else {
+            console.log(xhttp.response.data)
+            built(xhttp.response.data)
+        }
     }
-    else {
-        // built(xhr.response)
-        console.log(xhr.response)
+    xhttp.onerror = function () {
+        console.log("Request failed");
+    };
+    // xhttp.onreadystatechange = function() {
+    //   if (this.readyState == 4 && this.status == 200) {
+    //    document.getElementById("root").innerHTML = this.responseText;
+    //   }
+    // };
+    const built = (arr) => {
+        const root = document.getElementById("root")
+        arr.forEach((item,i) => {
+            let div = document.createElement("div");
+            div.setAttribute("class","results")
+            div.setAttribute("style","margin: 5px 5px")
+            let text = document.createElement("div");
+            let img = document.createElement("iframe");
+    
+            text.innerText = item.title;
+            img.setAttribute("src",item.embed_url)
+            img.setAttribute("frameBorder","0")
+            div.appendChild(img);
+            div.appendChild(text);
+    
+            root.appendChild(div);
+        });
     }
 }
 
-// xhr.onprogress = function (event) {
-//     if (event.lengthComputable) {
-//         console.log(`Received ${event.loaded} of ${event.total} bytes`);
-//     } else {
-//         console.log(`Received ${event.loaded} bytes`); // no Content-Length
-//     }
-
-// };
-
-xhr.onerror = function () {
-    console.log("Request failed");
-};
-
-// const built = (arr) => {
-//     const root = document.getElementById("root")
-//     arr.forEach((item,i) => {
-//         let div = document.createElement("div");
-//         let h1 = document.createElement("h1");
-//         let p = document.createElement("p");
-//         let img = document.createElement("img");
-
-//         h1.innerText = item.name;
-//         p.innerText = item.company.name;
-//         img.setAttribute("src",`https://robohash.org/${item.id}?200x200`) // item.id or i, it's the same here
-        
-//         div.appendChild(img);
-//         div.appendChild(h1);
-//         div.appendChild(p);
-
-//         root.appendChild(div);
-//     });
-// }
+function deleteGif(){
+    document.getElementsByTagName("input")[0].value = "";
+    let results = Array.from(document.getElementsByClassName("results"));
+    results.forEach(element => element.remove())
+}
