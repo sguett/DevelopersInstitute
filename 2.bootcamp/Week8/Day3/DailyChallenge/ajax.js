@@ -1,9 +1,9 @@
 // step 1
 let xhr = new XMLHttpRequest();
 // step 2
-xhr.open('GET', 'https://developers.giphy.com/');
+xhr.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=PclvxPD17SyTuQRCTXJHQ10y056F5fwZ&q=&limit=25&offset=0&rating=G&lang=en');
 xhr.setRequestHeader("Access-Control-Allow-Origin","*");
-xhr.setRequestHeader("AUTH-KEY","PclvxPD17SyTuQRCTXJHQ10y056F5fwZ");
+// xhr.setRequestHeader("api_key","PclvxPD17SyTuQRCTXJHQ10y056F5fwZ");
 // step 3
 xhr.send();
 
