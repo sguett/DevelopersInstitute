@@ -1,7 +1,7 @@
 // step 1
 let xhr = new XMLHttpRequest();
 // step 2
-xhr.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=PclvxPD17SyTuQRCTXJHQ10y056F5fwZ&q=&limit=25&offset=0&rating=G&lang=en');
+xhr.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=PclvxPD17SyTuQRCTXJHQ10y056F5fwZ');
 xhr.setRequestHeader("Access-Control-Allow-Origin","*");
 // xhr.setRequestHeader("api_key","PclvxPD17SyTuQRCTXJHQ10y056F5fwZ");
 // step 3
