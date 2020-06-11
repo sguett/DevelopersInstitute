@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/90fe40d98f.js" crossorigin="anonymous"></script>
+    <title>STAR WARS API</title>
+    <style>
+        body {
+            background-image: url('giphy.gif');
+            background-repeat: repeat;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #root {
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center; margin-top: 60px;">
+        <img src="logoStarWars.png" style="width: 25%; height: 25%;">
+    </div>
+    <div class="container">
+        <div id="root"
+            style="color: white; border: 4px solid #F7BF00; height: 300px; width: 500px; text-align: center; margin-top: 30px; border-radius: 5%;">
+
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 10px;"">
+        <button onclick=" findSomeone()"
+        style="background-color: white;border: 2px solid #F7BF00; width: 200px; height: auto; border-radius: 10%;">
+        <b>Find
+            someone</b></button>
+    </div>
+    <script src="ajax.js"></script>
+</body>
+
+</html>
