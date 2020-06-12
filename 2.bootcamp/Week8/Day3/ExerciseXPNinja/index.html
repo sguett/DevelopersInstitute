@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise XP Ninja</title>
+    <style>
+        #root {
+            display: grid;
+            align-items: end;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label>Search</label>
+        <input placeholder="text">
+        <button type="submit" onclick="loadDoc()">Find</button>
+        <button type="submit" onclick="deleteGif()">Delete</button>
+    </div>
+    <div id="root">
+    </div>
+    <script src="ajax.js"></script>
+</body>
+
+</html>
