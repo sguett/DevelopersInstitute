@@ -9,10 +9,13 @@ Promise.all(urls.map((url) =>
     fetch(url)
         .then((result) => {
             return result.json()
-        })
-        .catch(err => {
-            console.log(err)
         })))
     .then(data => {
-        console.log(data)
+        console.log('1 ', data[0])
+        console.log('2 ', data[1])
+        console.log('3 ', data[2])
+        console.log('4 ', data[3])
+    })
+    .catch(err => {
+        console.log(err)
     });
