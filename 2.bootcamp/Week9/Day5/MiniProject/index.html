@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/90fe40d98f.js" crossorigin="anonymous"></script>
+    <title>MiniProject</title>
+    <style>
+        #root {
+            position: relative;
+            z-index: 1;
+        }
+
+        #container {
+            display: flex;
+            align-items: flex-start;
+            position: absolute;
+            z-index: 2;
+        }
+
+        #buttons {
+            display: flex;
+            align-items: flex-start;
+            position: absolute;
+            z-index: 3;
+        }
+
+        #pokedex {
+            position: relative;
+        }
+
+        #imgPokemon {
+            position: absolute;
+            margin-top: 4rem;
+            margin-left: 550px;
+            text-align: center;
+            z-index: 4;
+        }
+
+        #infoPokemon {
+            position: absolute;
+            margin-top: 18rem;
+            margin-left: 465px;
+            text-align: center;
+            z-index: 5;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            height: 220px;
+            width: 300px;
+
+        }
+
+        #text {
+            position: absolute;
+            text-align: left;
+            margin-left: 70%;
+        }
+
+        button {
+            background-color: transparent;
+            border: transparent;
+            cursor: pointer;
+        }
+
+        .leftRight {
+            width: 3rem;
+            height: 1rem;
+            margin-top: 25rem;
+        }
+
+        #leftButton {
+            margin-left: 360px;
+        }
+
+        #greenButton {
+            margin-top: 23.5rem;
+            margin-left: 410px;
+            border-radius: 50%;
+            width: 4rem;
+            height: 4rem;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div div="root">
+        <div id="container">
+            <img src="logo.png" width="20%" alt="">
+            <div id="pokedex">
+                <img src="pokedex.png" width="85%" alt="">
+            </div>
+
+            <div id="text">
+                <h2>How to use:</h2>
+                <p><b>1-</b> Press the <b>green</b> button to get a random Pokémon.</p>
+                <p><b>2-</b> Press the <b>left</b> and <b>right</b> buttons to see previous and next Pokémon.</p>
+            </div>
+        </div>
+        <div id="buttons">
+            <button class="leftRight" id="leftButton" onclick="previousPokemon()"></button>
+            <button class="leftRight" id="rightButton" onclick="nextPokemon()"></button>
+            <button class="green" id="greenButton" onclick="randPokemon()"></button>
+        </div>
+        <div id="imgPokemon"></div>
+        <div id="infoPokemon"></div>
+    </div>
+    <script src="promises.js"></script>
+</body>
+
+</html>
