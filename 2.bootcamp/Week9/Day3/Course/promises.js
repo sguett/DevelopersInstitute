@@ -58,22 +58,22 @@
 
 // Error Handling
 
-// const asyncFunction = async () => {
-//     throw new Error('something get wrong');
-//     return 'done';
-// }
+const asyncFunction = async () => {
+    // throw new Error('something get wrong');
+    return 'done';
+}
 
-// const main = async () => {
-//     try {
-//         let a = await asyncFunction();
-//         console.log(a);
+const main = async () => {
+    try {
+        let a = await asyncFunction();
+        console.log(a);
 
-//     } catch (err) {
-//         console.log(err)
-//     }
-// }
+    } catch (err) {
+        console.log(err)
+    }
+}
 
-// main();
+main();
 
 // Loops
 

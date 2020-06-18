@@ -7,36 +7,37 @@ const button = document.createElement('button')
 button.innerText = 'Calculate'
 
 const getExchangeRate = async (fromCurrency, toCurrency, money) => {
-    const response = await fetch(curr);
-    const rates = await response.json();
-    const rate = rates.quotes;
-    // console.log(fromCurrency, toCurrency)
-    return (rate['USD' + toCurrency] / rate['USD' + fromCurrency]) * money;
+    try {
+        const response = await fetch(curr);
+        const rates = await response.json();
+        const rate = rates.quotes;
+        const result = Math.round(((rate['USD' + toCurrency] / rate['USD' + fromCurrency]) * money) * 100) / 100
+        // console.log(fromCurrency, toCurrency)
+        return result;
+    } catch (err) {
+        console.log(err);
+    }
 }
 
-const initList = async () => {
+const initList = async (nbBox) => {
     const response = await fetch(list);
     const listing = await response.json();
     const AllList = listing.currencies;
+    createSelectBox(2, AllList);
+}
 
-    const select1 = document.createElement('select')
-    const select2 = document.createElement('select')
-    for (const i in AllList) {
-        let option1 = document.createElement('option')
-        let option2 = document.createElement('option')
 
-        option1.setAttribute("value", i)
-        option1.innerText = AllList[i]
-
-        option2.setAttribute("value", i)
-        option2.innerText = AllList[i]
-
-        select1.appendChild(option1)
-        select2.appendChild(option2)
+const createSelectBox = (nbBox, List) => {
+    for (i = 0; i < nbBox; i++) {
+        const select = document.createElement('select')
+        for (const el in List) {
+            let option = document.createElement('option')
+            option.setAttribute("value", el)
+            option.innerText = List[el]
+            select.appendChild(option)
+        }
+        root.appendChild(select)
     }
-    root.appendChild(select1)
-    root.appendChild(select2)
-
 }
 
 initList()
@@ -46,21 +47,24 @@ initList()
     })
 
 
-button.addEventListener('click', function () {
+button.addEventListener('click', async function () {
     if (root.children.length > 4) {
         root.lastElementChild.remove()
     }
-    let val1 = document.getElementsByTagName("select")[0].value;
-    let val2 = document.getElementsByTagName("select")[1].value;
+    let val1 = document.getElementsByTagName("select")[0];
+    let val2 = document.getElementsByTagName("select")[1];
     let valToConvert = document.getElementsByTagName("input")[0].value;
-
-    getExchangeRate(val1, val2, valToConvert)
-        .then(res => {
-            // console.log(res);
-            let text = document.createElement("div");
-            text.innerText = val1 + " to " + val2 + "==>" + res
-            root.appendChild(text);
-        })
+    try {
+        await getExchangeRate(val1.value, val2.value, valToConvert)
+            .then(res => {
+                // console.log(res);
+                let text = document.createElement("div");
+                text.innerText = val1.selectedOptions[0].innerText + " to " + val2.selectedOptions[0].innerText + "==>" + res
+                root.appendChild(text);
+            })
+    } catch (err) {
+        console.log(err);
+    }
 })
 
 
