@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <!-- <div id="root"></div>
+    <button type="button" name="Button" onclick="getDataFromServer()">Ok</button> -->
+
+    <h2>Login:</h2>
+    <form action="http://localhost:3000/login" method="GET">
+        username: <input type="text" name="user" id="username" value="">
+        password: <input type="password" name="pass" id="password" value="">
+        <input type="submit" name="" value="Send">
+    </form>
+    <h2>Login with post:</h2>
+    <form action="http://localhost:3000/login" method="POST">
+        username: <input type="text" name="user" id="username" value="">
+        password: <input type="password" name="pass" id="password" value="">
+        <input type="submit" name="" value="Send">
+    </form>
+
+    <h2>Fetch the server</h2>
+    username: <input type="text" name="u" id="u" value="">
+    password: <input type="password" name="p" id="p" value="">
+    <button type="button" name="button" onclick="fetchData()">Fetch Data</button>
+</body>
+
+</html>
