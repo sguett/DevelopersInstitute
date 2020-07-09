@@ -21,12 +21,10 @@ const fetchData = (data) => {
 }
 
 const displayShopping = (list) => {
-    console.log(list);
-
     const root = document.getElementById('root');
     root.innerHTML = '';
     list.forEach(element => {
-        let el = document.createElement('h4');
+        let el = document.createElement('h3');
         el.innerHTML = element.item + ': ' + element.quantity;
         root.appendChild(el);
     });
