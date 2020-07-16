@@ -6,6 +6,7 @@ const http = require('http');
 
 // server.listen(3000);
 
+// create a server and send a html response
 // const server = http.createServer((request, response) => {
 //     // console.log(request);
 //     response.setHeader('Content-Type', 'text/html');
@@ -34,6 +35,9 @@ const app = exp();
 const cors = require('cors');
 app.use(cors());
 
+// get html file in public folder
+app.use(exp.static(__dirname + '/public'));
+
 // app.get('/', (req, res) => {
 //     const user = {
 //         firstname: 'sam',
@@ -51,12 +55,17 @@ app.use(cors());
 //     const p = req.query.pass;
 //     res.send(`Hello ${u}, your password is ${p}`);
 // });
+
 // listen with a fetch method (cf html)
-app.get('/login', (req, res) => {
-    console.log(req.query);
+app.get('/login/:id', (req, res) => {
+    // console.log(req.query);
+    console.log(req.params.id);
+
     // const u = req.query.user;
     // const p = req.query.pass;
-    res.send(req.query);
+    // if you want to send a message by status of result
+    res.status(200).send('OK')
+    // res.send(req.query);
 });
 // listen a post request
 const bp = require('body-parser')
@@ -70,6 +79,33 @@ app.post('/login', (req, res) => {
     }
     res.send(user)
 })
-app.listen(3000);
+// app.listen(3000);
 
+// other way
+// app.route('/login')
+//     .get((req, res) => {
+//         console.log(req.body);
+//         res.send(req.body)
+//     })
+//     .post((req, res) => {
+//         console.log(req.body);
+//         let user = {
+//             user: req.body.user,
+//             pass: req.body.pass
+//         }
+//         res.send(user)
+//     });
 
+app.delete('/user', (req, res) => {
+
+});
+app.put('/register', (req, res) => {
+
+});
+
+// other way to set a port
+app.set('port', 3000);
+app.listen(app.get('port'), () => {
+    console.log('APP is listening on port ' + app.get('port'));
+})
+// app.listen(3000);
