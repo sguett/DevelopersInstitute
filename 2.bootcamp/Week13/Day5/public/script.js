@@ -83,6 +83,8 @@ const displayMessage = (msg) => {
     const text = document.createElement("h3");
     const res = JSON.stringify(msg.message);
     text.innerHTML = JSON.parse(res);
+    text.style.width = '85%';
+    // text.setAttribute("style=", "width:100%");
     root.appendChild(text);
 }
 
@@ -92,5 +94,6 @@ const displayMessage2 = (msg) => {
     const text = document.createElement("h3");
     const res = JSON.stringify(msg.message);
     text.innerHTML = JSON.parse(res);
+    text.style.width = '85%';
     root.appendChild(text);
 }
